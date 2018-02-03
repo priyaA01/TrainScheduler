@@ -58,6 +58,8 @@ database.ref().on("child_added", function(childsnapshot) {
     // Current Time
     var currentTime = moment();
     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("server TIME: " + moment(firebase.database.ServerValue.TIMESTAMP).format("LLLL"));
+ 
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
@@ -86,5 +88,7 @@ database.ref().on("child_added", function(childsnapshot) {
 
 });
 
+ /*console.log("server TIME: " + moment(firebase.database.ServerValue.TIMESTAMP).format("hh:mm"));
+ */   
 
 
