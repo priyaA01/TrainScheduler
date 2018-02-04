@@ -17,7 +17,16 @@ var destination = "";
 var firstTrainTime = "";
 var frequency = "";
 
-$("#time").text(moment().format("LLLL"));
+/* function to update currenttime without page refresh*/
+function refresh() {
+	setTimeout("displayCT()", 1000);
+}
+
+function displayCT() {
+	$("#time").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+	refresh();
+}
+
 
 // Whenever a user clicks the submit-button
 $("#submitBtn").on("click", function (event) {
@@ -46,9 +55,10 @@ $("#submitBtn").on("click", function (event) {
 	}
 });
 
-/*everytime when a new dataset is added to firebase database, 
+/*everytime when a new dataset is added to firebase database, timecalculation is called
 a new row is dynamically created displaying the dataset along 
 with the minutes away and next arrival time calculated using momentJS*/
+
 database.ref("/trains").on("child_added", function (childsnapshot) {
 
 		$("#trainName").val("");
@@ -76,8 +86,10 @@ database.ref("/trains").on("child_added", function (childsnapshot) {
 		newRow.append("<td>" + minutesAwayFB + "</td>");
 		newRow.append("</tr>");
 		$("tbody").append(newRow);
+
 	}, function (errorObject) {
 		console.log('Errors handled: ' + errorObject.code);
 	}
 
 );
+
