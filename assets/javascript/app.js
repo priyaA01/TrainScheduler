@@ -17,6 +17,7 @@ var destination = "";
 var firstTrainTime = "";
 var frequency = "";
 
+$("#time").text(moment().format("LLLL"));
 
 // Whenever a user clicks the submit-button
 $("#submitBtn").on("click", function (event) {
@@ -28,14 +29,21 @@ $("#submitBtn").on("click", function (event) {
 	firstTrainTime = $("#firstTrainTime").val();
 	frequency = $("#frequency").val().trim();
 
-	//data pushed to firebase database
-	database.ref("/trains").push({
-		trainName: trainName,
-		destination: destination,
-		firstTrainTime: firstTrainTime,
-		frequency: frequency,
+	if (trainName != "" && destination != "" && firstTrainTime != "" && frequency != "") {
+		//data pushed to firebase database
+		database.ref("/trains").push({
+			trainName: trainName,
+			destination: destination,
+			firstTrainTime: firstTrainTime,
+			frequency: frequency,
 
-	});
+		});
+	} else {
+		$("#trainName").val("");
+		$("#destination").val("");
+		$("#firstTrainTime").val("");
+		$("#frequency").val("");
+	}
 });
 
 /*everytime when a new dataset is added to firebase database, 

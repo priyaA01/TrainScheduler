@@ -1,69 +1,53 @@
 body {
-	background-image: url("../images/background.png");
-}
-
-.mainContainer {
-	margin-top: 15px;
-}
-
-#mainHeader {
-	width: 100%;
-	margin: 0 0 20px 0;
-	padding: 5px 0 10px 0;
-	background-color: saddlebrown;
-	color: #ffffff;
-	text-align: center;
-}
-
-.sessionheader {
-	width: 100%;
-	margin: 0 0 0 0;
-	padding: 0.5px 0 0.5px 10px;
-	background-color: steelblue;
-	color: #ffffff;
-	text-align: left;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
 }
 
 .roundedDiv {
+	background-color: #FFFF99;
 	border-radius: 10px;
+	margin-bottom: 60px;
+	border: 2px solid #FFFF99;
 }
 
-button {
-	background-color: steelblue;
-	color: #fff;
+#mainHeader {
+	margin: 0 0 20px 0;
+	color: black;
+	text-align: center;
+	font-family: 'Roboto Slab', serif;
 }
 
-.trainCount {
-	box-sizing: border-box;
-	background-color: #000000;
-	border: 2px solid #dddddd;
-	color: #ffffff;
-	margin: 0 0 0 0;
-	padding: 2px 4px 2px 2px;
-}
-
-form {
-	width: 100%;
-	margin: 0 auto 20px auto;
-	padding: 10px 10px 10px 10px;
-	box-sizing: border-box;
-	background-color: #ffffff;
-	border: 2px solid steelblue;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	line-height: 125%;
-	color: #777777;
+.sessionHeader {
+	padding: 5px 0 5px 10px;
+	background-color: black;
+	color: white;
+	text-align: left;
+	font-family: 'Roboto Slab', serif;
 }
 
 .trainSchedule {
-	width: 100%;
-	margin: 0 auto 20px auto;
-	padding: 10px 10px 10px 10px;
-	box-sizing: border-box;
-	background-color: #ffffff;
-	border: 2px solid steelblue;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	padding: 5px 5px 0 10px;
+	background-color: lightyellow;
+	border: 1px solid #FFFF99;
+	font-family: 'Roboto Slab', serif;
 	line-height: 125%;
-	color: #777777;
+	color: black;
+}
+
+button {
+	background-color: black;
+	color: #fff;
+}
+
+form {
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 20px;
+	background-color: lightyellow;
+	border: 1px solid #FFFF99;
+	font-family: 'Roboto Slab', serif;
+	line-height: 125%;
+	color: black;
 }
 
 input {
